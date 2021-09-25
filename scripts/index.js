@@ -1,5 +1,3 @@
-
-
 $(document).ready(()=>{
     const settings = {
         "async": true,
@@ -13,22 +11,17 @@ $(document).ready(()=>{
     };
     
     $.ajax(settings).done(function(res) {
-        console.log(res);
         invokeLS(res);
     });
 }); //end of doc
 
 const invokeLS = (res)=> {
-
-
     const data = JSON.stringify(res.quotes);
     localStorage.setItem("StockData",data);
-
     loadUpMainPage();
 };
 
 const loadUpMainPage = () => {
-
     let sArray = JSON.parse(localStorage.getItem("StockData"))
     for(let count = 0; count < sArray.length; count++){
         $(".sData").append(
