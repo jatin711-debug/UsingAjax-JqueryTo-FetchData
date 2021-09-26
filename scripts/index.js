@@ -9,7 +9,6 @@ $(document).ready(()=>{
             "x-rapidapi-key": "713f7536d6msh175d2b3677bbed6p162f3ajsn363d8c68869d"
         }
     };
-    
     $.ajax(settings).done(function(res) {
         invokeLS(res);
     });
@@ -33,5 +32,9 @@ const loadUpMainPage = () => {
             </tr>
             `
         );
-    }
-}; 
+    }}; 
+
+
+$("#sButton").on("click", function() {
+    $("#sButton").prop("disabled",true);
+});
